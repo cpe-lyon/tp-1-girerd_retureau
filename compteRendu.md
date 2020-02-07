@@ -398,13 +398,31 @@ head -20 /var/log/syslog | tail -$(20-10)
 
 **22. Dans votre dossier personnel, utilisez la commande grep pour chercher où est défini l’alias ll vu précédemment**
 
+``grep -e 'ls -alF' -d recurse``
+
+*Retour obtenu :*
+
+``.bashrc:alias ll='ls -alF'``
+
+*L'alias ll est présent dans le fichier .bashrc.*
+
 &nbsp;
 
 **23. Utilisez la commande locate pour trouver le fichier history.log.**
 
+``locate history.log``
+
+*Retour obtenu :*
+
+``/var/log/apt/history.log``
+
+*Note: la commande n'est pas installée par défault, on utilise donc sudo apt install mlocate pour l'installer*
+
 &nbsp;
 
 **24. Créer un fichier dans votre dossier personnel puis utilisez locate pour le trouver. Apparaît-il ? Pourquoi ?**
+
+*Il n'est pas trouvé car ``locate`` ne scan pas tous les fichiers, mais les fichiers référencés dans une base de données. Cette base étant mise à jour tous les jours à 7h30 (ou 5 minutes après le démarrage de la machine si elle n'était pas allumée à cette heure), le fichié créé n'est donc pas présent dans cette dernière.*
 
 &nbsp;
 
