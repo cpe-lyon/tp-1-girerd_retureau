@@ -31,7 +31,7 @@ Mise en place du l'environnement.
 #### Manuel
 **1. A l’aide du manuel, identifiez le rôle de la commande which**
 
-*La commande which donne le chemin d'accès de l'exécutable associé à la commande donnée en argument.*
+*La commande ``which`` donne le chemin d'accès de l'exécutable associé à la commande donnée en argument.*
 
 &nbsp;
 
@@ -224,7 +224,7 @@ date
 
 **2. Dans votre dossier personnel, tapez successivement les commandes ls puis la; que peut-on en déduire sur les fichiers commençant par un point ?**
 
-*Les fichiers commençant par un point ne sont pas affichés avec un ``ls`` classique. Pour les afficher, il faut faire ``ls -a`` (ou la qui est un alias de cette commande).*
+*Les fichiers commençant par un point ne sont pas affichés avec un ``ls`` classique. Pour les afficher, il faut faire ``ls -A`` (ou la qui est un alias de cette commande).*
 
 &nbsp;
 
