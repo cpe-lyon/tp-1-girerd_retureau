@@ -495,7 +495,45 @@ nano log.txt
 
 **2. Editez le fichier.bashrcavecnanoet décommentez la ligneforce_color_prompt=yes pour activerla couleur. Enregistrez le fichier et quittez nano.**
 
+``nano .bashrc``
+
+*On trouve la ligne avec ``ctrl+w``, ``force_color_prompt`` puis ``Enter``.*
+
+*On supprime le ``#`` puis on sauvegarde et quitte avec ``CTRL+X``.*
 
 &nbsp;
 
 **3. Le fichier.bashrc est lu au démarrage du shell; pour le recharger, il faudrait donc se déconnecter puis se reconnecter; mais il existe un autre moyen : la commande source .bashrc. Testez-la, l’invite de commande devrait immédiatement passer en couleurs.**
+
+*Fait.*
+
+&nbsp;
+
+**4. Modifiez l’invite de commande pour qu’elle s’affiche sous la forme suivante :**
+
+![colored syntax](https://github.com/cpe-lyon/tp-1-girerd_retureau/blob/master/exempleCouleur.png)
+
+**où l’heure est affichée en violet et entre crochets, et le chemin du dossier courant en cyan**
+
+``nano .bashrc``
+
+``ctrl+W``, ``alt+C`` (pour respecter la casse), avec PS1+ en paramètres
+
+*On a :* 
+
+```if [ "$color_prompt" = yes ]; then
+    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+else
+    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
+```
+	
+*On remplace par :* 
+
+```
+if [ "$color_prompt" = yes ]; then
+    PS1='${debian_chroot:+($debian_chroot)}\e[95m[\t]\e[0m - \[\033[01;32m\]\u@\h\[\033[00m\]:\e[36m\w\[\033[00m\]\$ '
+else
+    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
+```
+
+![colored syntax](https://github.com/cpe-lyon/tp-1-girerd_retureau/blob/master/resultatCouleur.png)
