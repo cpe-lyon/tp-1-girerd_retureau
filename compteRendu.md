@@ -170,20 +170,33 @@ ls: /urs/bin/ls
 
 **5. Quelle commande permet d’aﬀicher les fichiers contenus dans le dossier/bin ?**
 
+``
+ls /bin
+``
 
 **6. Que fait la commande ls .. ?**
 
+*La commande ``ls ..`` affiche le contenu du dossier parent au répertoire courant.*
+
 **7. Quelle commande donne le chemin complet du dossier courant ?**
+*C'est la fonction ``pwd`` qui donne le chemin complet du dossier courant.*
+
 
 **8. Que fait la commande echo 'yo' > plop exécutée 2 fois ?**
+*La commande ``echo 'yo' > plop`` écrit 'yo' dans un fichier nommé plop en écrasant son contenu (si ce dernier n'existe pas, il le crée). L'exécuter une deuxième fois écrase le premier fichier et le recrée à l'identique.*
+
 
 **9. Que fait la commande echo 'yo' >> plop exécutée 2 fois ?**
+*La commande ``echo 'yo' >> plop`` écrit 'yo' dans un fichier nommé plop en écrivant à la suite de son contenu (si ce dernier n'existe pas, il le crée). L'exécuter une deuxième fois écrira 'yo' une deuxième fois.*
 
 **10. A quoi sert la commande file ? Essayez la sur des fichiers de types différents.**
+*La commande ``file`` décrit le type d'un fichier ainsi que son encodage.*
 
 **11. Créez un fichier toto qui contient la chaîne Hello Toto !; créer ensuite un lien titi vers ce fichier avec la commande ln toto titi. Modifiez à présent le contenu de toto et aﬀichez le contenu de titi: qu’observe-t-on ? Supprimez le fichier toto; quelle conséquence cela a-t-il sur titi ?**
+*On observe que le contenu de titi est le même que celui de toto. Après modification de toto, on remarque que titi a été modifié aussi. En revanche, si on supprime toto, titi est toujours présent et contient toujours les données qui étaient contenues dans toto.*
 
-**12. Créez à présent un lien symbolique tutu sur titi avec la commande ln -s titi tutu. Modifiez le contenu de titi; quelle conséquence pour tutu? Et inversement? Supprimez le fichier titi; quelle conséquence cela a-t-il surtutu?**
+**12. Créez à présent un lien symbolique tutu sur titi avec la commande ln -s titi tutu. Modifiez le contenu de titi; quelle conséquence pour tutu? Et inversement? Supprimez le fichier titi; quelle conséquence cela a-t-il sur tutu?**
+*tutu a le même contenu que titi, les modifications d'un fichier affecte l'autre. Supprimer titi a pour conséquence de rendre invalide le lien symbolique tutu (il devient inutilisable).
 
 **13. Aﬀichez à l’écran le fichier/var/log/syslog. Quels raccourcis clavier permettent d’interrompre et reprendre le défilement à l’écran?**
 
