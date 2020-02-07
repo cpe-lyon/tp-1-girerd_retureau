@@ -434,11 +434,50 @@ head -20 /var/log/syslog | tail -$(20-10)
 
 **1. Copiez le fichier /var/log/syslog dans votre dossier personnel sous le nom log.txt, puis ouvrez-le avec nano.**
 
+*Depuis le répertoire personnel :*
+
+```
+cp /var/log/syslog ./log.txt
+nano log.txt
+```
+
+&nbsp;
+
 **2. Remplacez toutes les occurrences du mot kernel par le mot noyau.**
+
+*Pour activer le mode remplacement, on appuie sur ``ALT+M``.*
+
+*On choisit le terme à remplacer : ``kernel``.*
+
+*On choisit ensuite le terme par lequel on le remplace : ``noyau``.*
+
+*La première occurence trouvée est affichée, on appuie sur la touche ``T`` pour remplacer toutes les occurences.*
+
+*On sauvegarde avec ``CTRL+S``.*
+
+&nbsp;
 
 **3. Déplacer les 10 premières lignes à la fin du fichier.**
 
+*On place le curseur au début du fichier (par défault).*
+
+*On passe en mode sélection en appuyant sur ``ALT+M``.*
+
+*On sélectionne les 10 premières lignes en appuyant 10 fois sur la flèche du bas.*
+
+*On coupe le texte en appuyant sur la touche ``CTRL+K``.*
+
+*On navigue jusqu'à la fin du fichier en appuyant sur ``CTRL+/`` puis ``CTRL+V``.*
+
+*On appuye sur ``CTRL+U`` pour coller.*
+
+*Et enfin ``CTRL+S`` pour sauvegarder.*
+
+&nbsp;
+
 **4. Annulez cette action5. Enregistrez le fichier avant de quitter nano.**
+
+*On annule l'action précédente en appuyant deux fois sur ``ALT+U`` (une fois pour annuler le coller, une autre pour le copier).*
 
 &nbsp;
 
@@ -450,8 +489,13 @@ head -20 /var/log/syslog | tail -$(20-10)
 
 **1. Commencez par créer une copie de ce fichier, que vous appellerez.bashrc_bak**
 
+``cp .bashrc .bashrc_backup``
+
+&nbsp;
 
 **2. Editez le fichier.bashrcavecnanoet décommentez la ligneforce_color_prompt=yes pour activerla couleur. Enregistrez le fichier et quittez nano.**
 
+
+&nbsp;
 
 **3. Le fichier.bashrc est lu au démarrage du shell; pour le recharger, il faudrait donc se déconnecter puis se reconnecter; mais il existe un autre moyen : la commande source .bashrc. Testez-la, l’invite de commande devrait immédiatement passer en couleurs.**
