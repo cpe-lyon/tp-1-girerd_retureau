@@ -497,7 +497,7 @@ nano log.txt
 
 ``nano .bashrc``
 
-*On trouve la ligne avec ``ctrl+w``, ``force_color_prompt`` puis ``Enter``.*
+*On trouve la ligne avec ``CTRL+W``, ``force_color_prompt`` puis ``Enter``.*
 
 *On supprime le ``#`` puis on sauvegarde et quitte avec ``CTRL+X``.*
 
@@ -517,7 +517,7 @@ nano log.txt
 
 ``nano .bashrc``
 
-``ctrl+W``, ``alt+C`` (pour respecter la casse), avec PS1+ en paramètres
+*``CTRL+W`` (pour initier la recherche), ``ALT+C`` (pour respecter la casse), avec ``PS1=`` en paramètre.*
 
 *On a :* 
 
