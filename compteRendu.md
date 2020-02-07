@@ -199,24 +199,60 @@ ls /bin
 *tutu a le même contenu que titi, les modifications d'un fichier affecte l'autre. Supprimer titi a pour conséquence de rendre invalide le lien symbolique tutu (il devient inutilisable).
 
 **13. Aﬀichez à l’écran le fichier/var/log/syslog. Quels raccourcis clavier permettent d’interrompre et reprendre le défilement à l’écran?**
+*On peut afficher le fichier complet avec la commande less /var/log/syslog.
+On peut naviguer dans le fichier avec les flèches directionnelles.
+On peut sortir avec la touche q.*
 
 **14. Aﬀichez les 5 premières lignes du fichier/var/log/syslog, puis les 15 dernières, puis seulement les lignes 10 à 20.**
 
+``
+head -5 /var/log/syslog
+tail -15 /var/log/syslog
+head -20 /var/log/syslog | tail -$(20-10)
+``
+
 **15. Que fait la commande dmesg | less ?**
+
+*``dmesg`` affiche des informations sur le kernel,
+``dmesg | less`` affiche toutes les informations et permet de naviguer dans ces dernières ( c'est l'effet de ``less `` sur le retour de ``dmesg``) *
+
 
 **16. Aﬀichez à l’écran le fichier/etc/passwd; que contient-il? Quelle commande permet d’aﬀicher la page de manuel de ce fichier?**
 
+*Il contient la liste des utilisateurs, ainsi que des informations sur ces derniers.*
+
 **17. Aﬀichez seulement la première colonne triée par ordre alphabétique inverse**
+
+``cut -d: -f1 /etc/passwd | sort -dr``
+
+* ``cut récupère`` le premier élément (``-f1``) de chaque ligne, séparés par ``: (-d:)``.*
+*``sort -dr`` trie par ordre l’alphabétique inversé.
 
 **18. Quelle commande nous donne le nombre d’utilisateurs ayant un compte sur cette machine (pas seulement les utilisateurs connectés) ?**
 
+``wc -l /etc/passwd | cut -d\  -f1``
+
+*``wc -l /etc/passwd`` récupère le nombre de lignes du fichier, avec son nom.*
+*``cut -d\  -f1``	extrait le nombre de lignes uniquement.*
+
 **19. Combien de pages de manuel comportent le mot-clé conversion dans leur description ?**
+
+``man -k conversion | wc -l``
+
+*Quatre pages du manuel contiennent le mot clé conversion dans leur description.*
 
 **20. A l’aide de la commande find, recherchez tous les fichiers se nommant passwd présents sur la machine**
 
+``sudo find / -name "passwd" | wc -l``
+*Il y a 7 fichiers appelés **passwd**
+Note: on utilise ``sudo`` pour pouvoir chercher dans les dossier protégés.*
+
 **21. Modifiez la commande précédente pour que la liste des fichiers trouvés soit enregistrée dans le fichier~/list_passwd_files.txt et que les erreurs soient redirigées vers le fichier spécial/dev/null**
 
-**22. Dans votre dossier personnel, utilisez la commande grep pour chercher où est défini l’alias ll vuprécédemment**
+``find / -name "passwd" > ~/list_passwd_files.txt 2>/dev/null``
+* ``2>/dev/null`` redirige les erreurs vers le fichier ``/dev/null``.*
+
+**22. Dans votre dossier personnel, utilisez la commande grep pour chercher où est défini l’alias ll vu précédemment**
 
 **23. Utilisez la commande locate pour trouver le fichier history.log.**
 
