@@ -1,3 +1,4 @@
+
 # Compte-Rendu TP1
  
  ## Auteurs et date
@@ -36,7 +37,7 @@ Mise en place du l'environnement.
 ``
 man 6 intro
 ``
-*Cette section décrit les jeux présents sur le système*
+*Cette section décrit les jeux présents sur le système.*
 ***
 #### Navigation dans l'arborescence des fichiers
 **1. allez dans le dossier /var/log**
@@ -130,14 +131,45 @@ rm -r Dossier2
 ***
 #### Commandes importantes
 **1. Quelle commande permet d’aﬀicher l’heure? A quoi sert la commande time ?**
+*Pour afficher l'heure, on utilise la commande suivante :*
+``
+date
+``
+
+*La commande ``time`` suivi d'une autre commande et de ses arguments permet d'obtenir trois informations :*
+- *le temps réel écoulé entre le début et la fin de l'exécution de la commande*
+- *le temps CPU*
+- *le temps CPU système*
 
 **2. Dans votre dossier personnel, tapez successivement les commandes ls puis la; que peut-on en déduire sur les fichiers commençant par un point ?**
+*Les fichiers commençant par un point ne sont pas affichés avec un ``ls`` classique. Pour les afficher, il faut faire ``ls -a`` (ou la qui est un alias de cette commande).*
 
 **3. Où se situe le programme ls ?**
+*On utilise la commande suivante :*
+``
+which ls
+``
+On obtient ainsi le chemin d'accès du programme ``ls`` :
+``
+ls: /urs/bin/ls
+`` 
 
 **4. Essayez la commande ll. Existe-t-il une entrée de manuel pour cette commande? Utilisez les commandes alias ou alias pour en savoir plus sur la nature de cette commande.**
+ ``ll`` *affiche de nombreuses informations sur les fichiers et dossiers contenus dans le répertoire courant :*
+ * *la taille totale de son contenu*
+ * *une ligne pour chaque fichier/dossier avec :*
+   - *le premier caractère désignant le type*
+   - *les 9 caractères suivant montrant les permissions pour l'utilisateur, le groupe et d'autres*
+   - *le nombre de liens physiques vers ce fichier/dossier*
+   - *le nom du propriétaire et son groupe*
+   - *sa taille en octets*
+   - *la date de modification*
+   - *le nom complet (pour les liens, montre aussi la cible du lien)*
+*Exemple :*
+``rw------- 1 herysia herysia    5 févr.  6 10:25 .bash_history``
 
 **5. Quelle commande permet d’aﬀicher les fichiers contenus dans le dossier/bin ?**
+
 
 **6. Que fait la commande ls .. ?**
 
